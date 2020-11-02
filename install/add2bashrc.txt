@@ -1,0 +1,3 @@
+#Comando para Lola en linea de comandos:
+alias Lola = "python ~/sphinx/SpeechRecog/SCRIPTS/sampler.py"
+#Fin de comandos para Lola

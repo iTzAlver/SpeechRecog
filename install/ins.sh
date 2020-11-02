@@ -25,11 +25,18 @@ pip install --upgrade pocketsphinx
 echo Librerías python instaladas.
 git clone https://github.com/iTzAlver/SpeechRecog
 cd SpeechRecog
-cd DICT
-tar -xfz cmusphinx-es-5.2.tar.gz
-gzip -d es-20.lm.gz
-mv es-20.lm.gz ~/.local/lib/python2.7/site-packages/pocketsphinx/model/es-20.lm.bin
+cd DICTS
+tar zxf cmusphinx-es-5.2.tar.gz
+rm cmusphinx-es-5.2.tar.gz
+gunzip es-20k.lm.gz
+mv es-20k.lm ~/.local/lib/python2.7/site-packages/pocketsphinx/model/es-20k.lm.bin
 mv es.dict ~/.local/lib/python2.7/site-packages/pocketsphinx/model/es.dict
 cd cmusphinx-es-5.2
+cd model_parameters
 mv voxforge_es_sphinx.cd_ptm_4000 ~/.local/lib/python2.7/site-packages/pocketsphinx/model/es-es
 echo Modelo español copiado correctamente.
+echo Instalando comando Lola:
+cat ~/sphinx/SpeechRecog/install/add2bashrc.txt >> ~/.bashrc
+echo  >> ~/.bashrc
+source ~/.bashrc
+echo Terminado.

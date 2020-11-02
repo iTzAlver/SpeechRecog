@@ -31,13 +31,15 @@ try:
     raspi = True
 except:
     print("Warning: No hay interfaz GPIO, se senaliza por consola.")
+
+THIS_FOLDER = os.path.dirname(os.path.abspath(__file__))
 #-----------------------------------------------------------------------------------------
 #
 #   @parameters
 #
 #-----------------------------------------------------------------------------------------
 try:
-    param = open("PARAMETERS.txt","r")
+    param = open(os.path.join(THIS_FOLDER,'PARAMETERS.txt'),"r")
     param.readline()
     device = ((param.readline()).split())[2]
     srate = int(((param.readline()).split())[4])
@@ -244,7 +246,7 @@ if __name__ == '__main__':
     print("\033[1;33;40m ==============================================================")
     print("\033[1;33;40m = Abriendo diccionario...                                    =")
     try:
-        dict_file = open(dict_path, "r")
+        dict_file = open(os.path.join(THIS_FOLDER,dict_path), "r")
     except:
         print("Error al abrir el archivo DICT.txt")
         sys.exit(0)
