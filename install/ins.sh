@@ -39,4 +39,5 @@ echo Instalando comando Lola:
 cat ~/sphinx/SpeechRecog/install/add2bashrc.txt >> ~/.bashrc
 echo  >> ~/.bashrc
 source ~/.bashrc
+rm -r ~/sphinx/SpeechRecog/install
 echo Terminado.
