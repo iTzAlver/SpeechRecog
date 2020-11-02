@@ -1,8 +1,10 @@
 #!/bin/bash
+sudo echo Instalador de Lola.
 echo Intalando dependencias...
 sudo apt-get install -qq python python-dev python-pip build-essential swig git libpulse-dev libasound2-dev autoconf libtool automake bison
 echo Dependencias instaladas.
 echo Creando carpeta para Sphinx...
+cd ~
 mkdir sphinx
 cd sphinx
 git clone https://github.com/cmusphinx/sphinxbase
@@ -42,3 +44,4 @@ source ~/.bashrc
 echo Borrando residuos...
 rm -r ~/sphinx/SpeechRecog/install
 echo Terminado.
+source ~/.bashrc
