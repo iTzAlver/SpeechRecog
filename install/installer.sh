@@ -37,7 +37,8 @@ mv voxforge_es_sphinx.cd_ptm_4000 ~/.local/lib/python2.7/site-packages/pocketsph
 echo Modelo español copiado correctamente.
 echo Instalando comando Lola:
 cat ~/sphinx/SpeechRecog/install/add2bashrc.txt >> ~/.bashrc
-echo  >> ~/.bashrc
+echo Actualizando .bashrc
 source ~/.bashrc
+echo Borrando residuos...
 rm -r ~/sphinx/SpeechRecog/install
 echo Terminado.
