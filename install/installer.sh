@@ -43,5 +43,6 @@ echo Actualizando .bashrc
 source ~/.bashrc
 echo Borrando residuos...
 rm -r ~/sphinx/SpeechRecog/install
+sleep 5
 echo Terminado.
 source ~/.bashrc
