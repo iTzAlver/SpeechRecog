@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------------------
 def __FSMSignalRPI( signal , state , number):
     #Manejador GPIO
-    return 0
+    return [0, number]
 
 def __FSMSignal( signal , state , number):
     #Manejador de estado:
