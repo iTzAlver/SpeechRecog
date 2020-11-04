@@ -4,3 +4,4 @@ Frecuencia de muestreo = 32000
 Tamaño del buffer = 2048
 Path del diccionario = DICT.txt
 Modo del núcleo = 0
+Forzar línea de comandos = 1

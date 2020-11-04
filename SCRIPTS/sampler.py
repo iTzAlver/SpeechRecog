@@ -52,6 +52,7 @@ try:
     bsize = int(((param.readline()).split())[4])
     dict_path = ((param.readline()).split())[4]
     core_mode = int(((param.readline()).split())[4])
+    force_command = int(((param.readline()).split())[5])
     param.close()
 except:
     print("Error al acceder al archivo PARAMETERS.txt")
@@ -205,7 +206,7 @@ if __name__ == '__main__':
         for word in words:
             mysignal = __dictSearch(__wordHandler(word), dict_file)
             if(mysignal > 0):
-                if(raspi == True):
+                if((raspi == True) and (force_command == 0)):
                     [state, number] = FSMS.__FSMSignalRPI(mysignal, state, number)
                 else:
                     [state, number] = FSMS.__FSMSignal(mysignal, state, number)
