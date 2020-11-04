@@ -2,6 +2,9 @@
 sudo echo Instalador de Lola.
 echo Intalando dependencias...
 sudo apt-get install -qq python python-dev python-pip build-essential swig git libpulse-dev libasound2-dev autoconf libtool automake bison
+sudo apt-get install pulseaudio
+s
+y
 echo Dependencias instaladas.
 echo Creando carpeta para Sphinx...
 cd ~
