@@ -44,5 +44,7 @@ source ~/.bashrc
 echo Borrando residuos...
 rm -r ~/sphinx/SpeechRecog/install
 sleep 5
+export LD_LIBRARY_PATH=/usr/local/lib
+sleep 5
 echo Terminado.
 source ~/.bashrc
