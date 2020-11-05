@@ -2,9 +2,7 @@
 sudo echo Instalador de Lola.
 echo Intalando dependencias...
 sudo apt-get install -qq python python-dev python-pip build-essential swig git libpulse-dev libasound2-dev autoconf libtool automake bison
-sudo apt-get install pulseaudio
-s
-y
+sudo apt-get -y install pulseaudio
 echo Dependencias instaladas.
 echo Creando carpeta para Sphinx...
 cd ~
@@ -42,12 +40,15 @@ mv voxforge_es_sphinx.cd_ptm_4000 ~/.local/lib/python2.7/site-packages/pocketsph
 echo Modelo español copiado correctamente.
 echo Instalando comando Lola:
 cat ~/sphinx/SpeechRecog/install/add2bashrc.txt >> ~/.bashrc
-echo Actualizando .bashrc
-source ~/.bashrc
+echo Actualizando:
 echo Borrando residuos...
 rm -r ~/sphinx/SpeechRecog/install
+echo Cambiando variables...
 sleep 5
 export LD_LIBRARY_PATH=/usr/local/lib
-sleep 5
-echo Terminado.
+sleep 10
 source ~/.bashrc
+echo Terminado.
+echo 
+echo Instalación completada, ejecute el comando: Lola  para ejecutar el programa, si el sistema operativo no reconoce el comando ejecute la siguiente acción:
+echo source ~/.bashrc
