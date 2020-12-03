@@ -7,12 +7,12 @@ Tutor: Saturnino Maldonado Bascón.
 
 ###	INSTALACIÓN DEL MODELO
 
-	1.- Instalación:	$	git clone https://github.com/iTzAlver/SpeechRecog
-						$	cd SpeechRecog/install/
-						$	./installer.sh
-						$	source /.bashrc
+	1.- Instalación:		$	git clone https://github.com/iTzAlver/SpeechRecog
+					$	cd SpeechRecog/install/
+					$	./installer.sh
+					$	source /.bashrc
 
-	2.- Eliminar residuos:	$	rm -r SpeechRecog
+	2.- Eliminar residuos:		$	rm -r SpeechRecog
 
 	3.- Reiniciar el sistema:	$	sudo reboot
 
