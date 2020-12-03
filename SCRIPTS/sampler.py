@@ -194,14 +194,15 @@ if __name__ == '__main__':
     print("\033[1;33;40m")
     print("\033[1;33;40m ==============================================================")
     print("\033[1;33;40m = Ejecutando programa...                                     =")
-    print("\033[1;33;40m = Cancele la ejecucion en cualquier comento con ctrl+Z.      =")
+    print("\033[1;33;40m = Cancele la ejecucion en cualquier momento con ctrl+Z.      =")
     print("\033[1;33;40m ==============================================================")
     print("\033[1;31;40m")
     #   Computing loop:
     state = 0
     number = ''
     for phrase in speech:
-        print(phrase)
+    	if force_command == 1:
+        	print(phrase)
         words = str(phrase).split()
         for word in words:
             mysignal = __dictSearch(__wordHandler(word), dict_file)
