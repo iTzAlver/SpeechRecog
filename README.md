@@ -91,14 +91,14 @@ Cabe destacar que para que la palabra sea reconocida, debe de estar también inc
 
 El sistema tiene varios parámetros modificables y son los siguientes:
 
-	1.- Dispositivo:	Es el micrófono a utilizar, esto es útil únicamente si existen varios micrófonos conectados al dispositivo. Sólo se tiene en cuenta si el modo del núcleo es 1.
+	1.- Dispositivo:		Es el micrófono a utilizar, esto es útil únicamente si existen varios micrófonos conectados al dispositivo. Sólo se tiene en cuenta si el modo del núcleo es 1.
 	2.- Frecuencia de muestreo: 	Frecuencia a la que se extraen las muestras del audio. El valor óptimo en una Raspberry es de 3200.
-	3.- Tamaño del buffer:			Tamaño del buffer de audio. El valor óptimo en una Raspberry es de 2048 ó 1024.
-	4.- Path del diccionario:		Ubicación del diccionario de usuario en el sistema de archivos, puede modificarse la ruta del mismo, aunque no se recomienda.
-	5.- Modo del núcleo:			Modo de reconocimiento de dispositivo en el kernel. Si si valor es 0, utilizará el dispositivo predeterminado por ALSA; si su valor es 1, utilizará el dispositivo con el índice del valor que esté puesto en 'Dispositivo'.
+	3.- Tamaño del buffer:		Tamaño del buffer de audio. El valor óptimo en una Raspberry es de 2048 ó 1024.
+	4.- Path del diccionario:	Ubicación del diccionario de usuario en el sistema de archivos, puede modificarse la ruta del mismo, aunque no se recomienda.
+	5.- Modo del núcleo:		Modo de reconocimiento de dispositivo en el kernel. Si si valor es 0, utilizará el dispositivo predeterminado por ALSA; si su valor es 1, utilizará el dispositivo con el índice del valor que esté puesto en 'Dispositivo'.
 	6.- Forzar línea de comandos:	Escoge la función del manejador de señales.
-			*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos. **El valor 1 corresponde por defecto a la DEMO.**
-			*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es una Raspberry y usará la función __FSMSignalRPI() si SÍ nos econtramos en una Raspberry. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
+		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos. **El valor 1 corresponde por defecto a la DEMO.**
+		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es una Raspberry y usará la función __FSMSignalRPI() si SÍ nos econtramos en una Raspberry. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
 
 ### 4.3.- Fichero de manejador de señales:
 
