@@ -98,7 +98,7 @@ El sistema tiene varios parámetros modificables y son los siguientes:
 	5.- Modo del núcleo:		Modo de reconocimiento de dispositivo en el kernel. Si si valor es 0, utilizará el dispositivo predeterminado por ALSA; si su valor es 1, utilizará el dispositivo con el índice del valor que esté puesto en 'Dispositivo'.
 	6.- Forzar línea de comandos:	Escoge la función del manejador de señales.
 		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos.  
-					  __El valor 1 corresponde por defecto a la DEMO.__  
+					  **El valor 1 corresponde por defecto a la DEMO.**  
 		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es un Raspbian y usará la función __FSMSignalRPI() si SÍ nos econtramos en un Raspbian. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
 
 #### 4.3.- Fichero de manejador de señales:
