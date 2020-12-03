@@ -98,9 +98,32 @@ El sistema tiene varios parámetros modificables y son los siguientes:
 	5.- Modo del núcleo:		Modo de reconocimiento de dispositivo en el kernel. Si si valor es 0, utilizará el dispositivo predeterminado por ALSA; si su valor es 1, utilizará el dispositivo con el índice del valor que esté puesto en 'Dispositivo'.
 	6.- Forzar línea de comandos:	Escoge la función del manejador de señales.
 		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos.  
-					El valor 1 corresponde por defecto a la DEMO.  
-		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es una Raspberry y usará la función __FSMSignalRPI() si SÍ nos econtramos en una Raspberry. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
+					   El valor 1 corresponde por defecto a la DEMO.  
+		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es un Raspbian y usará la función __FSMSignalRPI() si SÍ nos econtramos en un Raspbian. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
 
 #### 4.3.- Fichero de manejador de señales:
 
-El manejador de señales, traduce las señales recibidas por los scripts (señales internas) en señales al sistema operativo (señales del sistema). Estas funciones debe definirlas el usuario, dado que existe un amplio abanico de posibilidades 
+El manejador de señales, traduce las señales recibidas por los scripts (señales internas) en señales al sistema operativo (señales del sistema). Estas funciones debe definirlas el usuario, dado que existe un amplio abanico de posibilidades al usuario de mandar señales, generar máquinas de estados y muchas más cosas que no dependen del sistema de reconocimiento de audio y sí dependen de parámetros como en qué lenguaje está escrito el programa principal o qué sistema operativo se está ejecutando.  
+Existen dos funciones principales:
+
+	*	__FSMSignalRPI():	Esta se ejecuta cuando estamos en Raspbian y el valor 'Forzar línea de comandos' del fichero de parámetros del sistema vale 0.
+	*	__FSMSignal():	Esta se ejecuta cuando NO estamos en Raspbian y el valor 'Forzar línea de comandos' del fichero de parámetros del sistema vale 1.
+
+Sea cual sea la función que querramos utilizar, aquí debe de ir el código que el usuario debe de desarollar. Las posibilidades que existen para mandar señales por el sistema operativo son las siguientes:
+
+	*	Señales de procesos. (cualquier lenguaje)
+	*	Tuberías del sistema operativo. (cualquier lenguaje)
+	*	Librerías como 'multiprocessing', 'zmq' y otras. (python en cualquier versión)
+	*	Cualquier comunicación manual desarollada por el usuario. (cualquier lenguaje)
+	*	Implementación directa de código sobre la función. (sólo python 2.7)
+
+Estas funciones contienen dos variables importantes, AMBAS DEBEN DE SER DEVUELTAS AL SCRIPT PRINCIPAL CON UN RETURN [state,number]:
+
+	*	state:	Estado de la máquina de estados, en caso de que el usuario quiera desarollarla. Si se devuelve -1 al script principal, este termina la ejecución del programa.
+	*	number:	Buffer en forma de string. En caso de que el usuario necesite un buffer.
+
+
+** NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian. **
+
+#### 4.4.- Fichero de corrección de errores:
+
