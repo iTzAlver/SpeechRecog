@@ -1,10 +1,15 @@
 #	RECONOCIMIENTO DE COMANDOS
 
-Este repositorio contiene un programa capaz de realizar señales al sistema operativo a partir de comandos mediante voz. Ha sido diseñado con objetivo de controlar un robot, manteniendo una ejecución en paralelo. 
-Este modelo ha sido diseñado para Python 2.7. 
-Autor: Alberto Palomo Alonso. 
-Tutor: Saturnino Maldonado Bascón. 
-Universidad de Alcalá de Hernares. Escuela Politécnica Superior. 
+Este repositorio contiene un programa capaz de realizar señales al sistema operativo a partir de comandos mediante voz. Ha sido diseñado con objetivo de controlar un robot, manteniendo una ejecución en paralelo.  
+
+Este modelo ha sido diseñado para Python 2.7.  
+
+Autor: Alberto Palomo Alonso.  
+
+Tutor: Saturnino Maldonado Bascón.  
+
+Universidad de Alcalá de Hernares. Escuela Politécnica Superior.  
+
 
 ###	INSTALACIÓN DEL MODELO
 
@@ -24,10 +29,10 @@ Universidad de Alcalá de Hernares. Escuela Politécnica Superior.
 	- Ejecución de archivo:		$	python ~/sphinx/SpeechRecog/SCRIPTS/sampler.py
 
 Si el programa no ha recibido errores, como la detección de micrófono u otros errores posibles, recibirá el siguiente mensaje en la línea de comandos:
-> ==============================================================
-> = Ejecutando programa...                                     =
-> = Cancele la ejecucion en cualquier momento con ctrl+Z.      =
-> ==============================================================
+	 ==============================================================
+	 = Ejecutando programa...                                     =
+	 = Cancele la ejecucion en cualquier momento con ctrl+Z.      =
+	 ==============================================================
 
 ### USO DE LA DEMO:
 
