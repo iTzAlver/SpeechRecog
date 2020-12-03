@@ -123,7 +123,7 @@ Estas funciones contienen dos variables importantes, AMBAS DEBEN DE SER DEVUELTA
 	*	number:	Buffer en forma de string. En caso de que el usuario necesite un buffer.
 
 
-__ NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian. __
+__NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian.__
 
 #### 4.4.- Fichero de corrección de errores:
 
