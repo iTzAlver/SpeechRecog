@@ -8,7 +8,7 @@ Este modelo ha sido diseñado para Python 2.7.
 >Universidad de Alcalá de Hernares. Escuela Politécnica Superior.  
 
 
-###	INSTALACIÓN DEL MODELO
+###	1.- INSTALACIÓN DEL MODELO
 
 	1.- Instalación:		$	git clone https://github.com/iTzAlver/SpeechRecog
 					$	cd SpeechRecog/install/
@@ -19,7 +19,7 @@ Este modelo ha sido diseñado para Python 2.7.
 
 	3.- Reiniciar el sistema:	$	sudo reboot
 
-###	EJECUCIÓN DE DEMO:
+###	2.- EJECUCIÓN DE DEMO:
 
 	- Ejecución simple:		$	Lola
 
@@ -30,7 +30,7 @@ Si el programa no ha recibido errores, como la detección de micrófono u otros 
 >	Ejecutando programa...         
 >	Cancele la ejecucion en cualquier momento con ctrl+Z.      
 
-### USO DE LA DEMO:
+### 3.- USO DE LA DEMO:
 
 Durante la demo, todas las palabras que el sistema reconozca serán devueltas a la línea de comandos en forma de eco. Si el sistema no devuelve las palabras que usted ha pronunciado, compruebe el micrófono o refiérase a la documentación del proyecto para más información.  
 Pruebe a pronunciar el siguiente conjunto de palabras:
@@ -57,7 +57,7 @@ Pruebe a pronunciar el siguiente conjunto de palabras:
 Decir números consecutivos provoca que se almacenen en el buffer, decir las palabras ‘no’ o ‘cancelar’ eliminan el número del buffer.
 Si las respuestas han sido las adecuadas, significa que el sistema está listo para ser adaptado a su proyecto y utilizarse.
 
-### ADAPTACIÓN DEL SISTEMA:
+### 4.- ADAPTACIÓN DEL SISTEMA:
 
 Como usuario, deberá modificar los siguientes ficheros:
 
@@ -70,6 +70,6 @@ Como programador, deberá modificar, adicionalmente, los siguientes ficheros:
 	4.- Fichero de corrección de errores:	~/sphinx/SpeechRecog/SCRIPTS/CMap.py
 	5.- Fichero de diccionario del modelo:	~/.local/lib/python2.7/site-packages/pocketsphinx/models/es.dict
 
-#### Fichero de diccionario de usuario:
+#### 4.1.- Fichero de diccionario de usuario:
 
 En este fichero debemos de introducir las palabras [...]
