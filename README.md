@@ -74,8 +74,8 @@ Como programador, deberá modificar, adicionalmente, los siguientes ficheros:
 
 Existen dos tipos de señales:  
 
--	Señales internas: Son las señales que genera el sistema (sampler.py) hacia el manejador de señales en función de la palabra reconocida.  
--	Señales del sistema: Son las señales que genera el manejador de señal hacia el sistema operativo en función de la acción asociada.  
+-	**Señales internas:** Son las señales que genera el sistema (sampler.py) hacia el manejador de señales en función de la palabra reconocida.  
+-	**Señales del sistema:** Son las señales que genera el manejador de señal hacia el sistema operativo en función de la acción asociada.  
 
 En este fichero debemos de introducir las palabras que queremos que se traduzcan a señales internas. Por lo que todas las palabras que queremos reconocer deben de estar incluidas en este diccionario con el siguiente formato:
 
@@ -87,7 +87,7 @@ En este fichero debemos de introducir las palabras que queremos que se traduzcan
 
 Cabe destacar que para que la palabra sea reconocida, debe de estar también incluida en el diccionario del modelo (contiene 20.000 palabras en castellano).
 
-### 4.2.- Fichero de parámetros del sistema:
+#### 4.2.- Fichero de parámetros del sistema:
 
 El sistema tiene varios parámetros modificables y son los siguientes:
 
@@ -97,8 +97,10 @@ El sistema tiene varios parámetros modificables y son los siguientes:
 	4.- Path del diccionario:	Ubicación del diccionario de usuario en el sistema de archivos, puede modificarse la ruta del mismo, aunque no se recomienda.
 	5.- Modo del núcleo:		Modo de reconocimiento de dispositivo en el kernel. Si si valor es 0, utilizará el dispositivo predeterminado por ALSA; si su valor es 1, utilizará el dispositivo con el índice del valor que esté puesto en 'Dispositivo'.
 	6.- Forzar línea de comandos:	Escoge la función del manejador de señales.
-		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos. **El valor 1 corresponde por defecto a la DEMO.**
+		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos.  
+					El valor 1 corresponde por defecto a la DEMO.  
 		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es una Raspberry y usará la función __FSMSignalRPI() si SÍ nos econtramos en una Raspberry. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
 
-### 4.3.- Fichero de manejador de señales:
+#### 4.3.- Fichero de manejador de señales:
 
+El manejador de señales, traduce las señales recibidas por los scripts (señales internas) en señales al sistema operativo (señales del sistema). Estas funciones debe definirlas el usuario, dado que existe un amplio abanico de posibilidades 
