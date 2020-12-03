@@ -107,7 +107,7 @@ El manejador de señales, traduce las señales recibidas por los scripts (señal
 Existen dos funciones principales:
 
 	*	__FSMSignalRPI():	Esta se ejecuta cuando estamos en Raspbian y el valor 'Forzar línea de comandos' del fichero de parámetros del sistema vale 0.
-	*	__FSMSignal():	Esta se ejecuta cuando NO estamos en Raspbian y el valor 'Forzar línea de comandos' del fichero de parámetros del sistema vale 1.
+	*	__FSMSignal():		Esta se ejecuta cuando NO estamos en Raspbian y el valor 'Forzar línea de comandos' del fichero de parámetros del sistema vale 1.
 
 Sea cual sea la función que querramos utilizar, aquí debe de ir el código que el usuario debe de desarollar. Las posibilidades que existen para mandar señales por el sistema operativo son las siguientes:
 
@@ -123,7 +123,7 @@ Estas funciones contienen dos variables importantes, AMBAS DEBEN DE SER DEVUELTA
 	*	number:	Buffer en forma de string. En caso de que el usuario necesite un buffer.
 
 
-** NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian. **
+__ NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian. __
 
 #### 4.4.- Fichero de corrección de errores:
 
