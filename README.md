@@ -3,9 +3,9 @@
 Este repositorio contiene un programa capaz de realizar señales al sistema operativo a partir de comandos mediante voz. Ha sido diseñado con objetivo de controlar un robot, manteniendo una ejecución en paralelo.  
 Este modelo ha sido diseñado para Python 2.7.  
 
-Autor: Alberto Palomo Alonso.  
-Tutor: Saturnino Maldonado Bascón.  
-Universidad de Alcalá de Hernares. Escuela Politécnica Superior.  
+>Autor: Alberto Palomo Alonso.  
+>Tutor: Saturnino Maldonado Bascón.  
+>Universidad de Alcalá de Hernares. Escuela Politécnica Superior.  
 
 
 ###	INSTALACIÓN DEL MODELO
@@ -35,23 +35,23 @@ Si el programa no ha recibido errores, como la detección de micrófono u otros 
 Durante la demo, todas las palabras que el sistema reconozca serán devueltas a la línea de comandos en forma de eco. Si el sistema no devuelve las palabras que usted ha pronunciado, compruebe el micrófono o refiérase a la documentación del proyecto para más información.  
 Pruebe a pronunciar el siguiente conjunto de palabras:
 
->	Hola  
+>	-	Hola  
 		     Respuesta: Hola, buenas, soy Lola.  
->	Uno  
+>	-	Uno  
 		     Respuesta: Numero : 1  
->	Tres  
+>	-	Tres  
 		     Respuesta: Numero : 13  
->	Nueve  
+>	-	Nueve  
 		     Respuesta: Numero: 139  
->	Llama  
+>	-	Llama  
 		     Respuesta: Llamando a : 139  
->	Richard  
+>	-	Richard  
 		     Respuesta: [Numero de Richard]  
->	Ve  
+>	-	Ve  
 		     Cambio de estado de la máquina de estados.  
->	Cocina  
+>	-	Cocina  
 		     Respuesta: Me estoy moviendo a la cocina.  
->	Adiós  
+>	-	Adiós  
 		     Fin del programa.  
 
 Decir números consecutivos provoca que se almacenen en el buffer, decir las palabras ‘no’ o ‘cancelar’ eliminan el número del buffer.
