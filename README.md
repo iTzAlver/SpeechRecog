@@ -26,10 +26,9 @@ Universidad de Alcalá de Hernares. Escuela Politécnica Superior.
 	- Ejecución de archivo:		$	python ~/sphinx/SpeechRecog/SCRIPTS/sampler.py
 
 Si el programa no ha recibido errores, como la detección de micrófono u otros errores posibles, recibirá el siguiente mensaje en la línea de comandos:
->	==============================================================  
->	= Ejecutando programa...                                     =  
->	= Cancele la ejecucion en cualquier momento con ctrl+Z.      =  
->	==============================================================   
+
+>	Ejecutando programa...         
+>	Cancele la ejecucion en cualquier momento con ctrl+Z.      
 
 ### USO DE LA DEMO:
 
@@ -37,23 +36,23 @@ Durante la demo, todas las palabras que el sistema reconozca serán devueltas a 
 Pruebe a pronunciar el siguiente conjunto de palabras:
 
 >	Hola  
->		Respuesta: Hola, buenas, soy Lola.  
+>		     Respuesta: Hola, buenas, soy Lola.  
 >	Uno  
->		Respuesta: Numero : 1  
+>		     Respuesta: Numero : 1  
 >	Tres  
->		Respuesta: Numero : 13  
+>		     Respuesta: Numero : 13  
 >	Nueve  
->		Respuesta: Numero: 139  
+>		     Respuesta: Numero: 139  
 >	Llama  
->		Respuesta: Llamando a : 139  
+>		     Respuesta: Llamando a : 139  
 >	Richard  
->		Respuesta: [Numero de Richard]  
+>		     Respuesta: [Numero de Richard]  
 >	Ve  
->		Cambio de estado de la máquina de estados.  
+>		     Cambio de estado de la máquina de estados.  
 >	Cocina  
->		Respuesta: Me estoy moviendo a la cocina.  
+>		     Respuesta: Me estoy moviendo a la cocina.  
 >	Adiós  
->		Fin del programa.  
+>		     Fin del programa.  
 
 Decir números consecutivos provoca que se almacenen en el buffer, decir las palabras ‘no’ o ‘cancelar’ eliminan el número del buffer.
 Si las respuestas han sido las adecuadas, significa que el sistema está listo para ser adaptado a su proyecto y utilizarse.
