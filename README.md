@@ -1,4 +1,4 @@
-#	RECONOCIMIENTO DE COMANDOS
+#	RECONOCIMIENTO DE COMANDOS VIA PYTHON
 
 Este repositorio contiene un programa capaz de realizar señales al sistema operativo a partir de comandos mediante voz. Ha sido diseñado con objetivo de controlar un robot, manteniendo una ejecución en paralelo.  
 Este modelo ha sido diseñado para Python 2.7.  
@@ -19,6 +19,7 @@ Este modelo ha sido diseñado para Python 2.7.
 
 	3.- Reiniciar el sistema:	$	sudo reboot
 
+
 ###	2.- EJECUCIÓN DE DEMO:
 
 	- Ejecución simple:		$	Lola
@@ -29,6 +30,7 @@ Si el programa no ha recibido errores, como la detección de micrófono u otros 
 
 >	Ejecutando programa...         
 >	Cancele la ejecucion en cualquier momento con ctrl+Z.      
+
 
 ### 3.- USO DE LA DEMO:
 
@@ -57,6 +59,7 @@ Pruebe a pronunciar el siguiente conjunto de palabras:
 Decir números consecutivos provoca que se almacenen en el buffer, decir las palabras ‘no’ o ‘cancelar’ eliminan el número del buffer.
 Si las respuestas han sido las adecuadas, significa que el sistema está listo para ser adaptado a su proyecto y utilizarse.
 
+
 ### 4.- ADAPTACIÓN DEL SISTEMA:
 
 Como usuario, deberá modificar los siguientes ficheros:
@@ -69,6 +72,7 @@ Como programador, deberá modificar, adicionalmente, los siguientes ficheros:
 
 	4.- Fichero de corrección de errores:	~/sphinx/SpeechRecog/SCRIPTS/CMap.py
 	5.- Fichero de diccionario del modelo:	~/.local/lib/python2.7/site-packages/pocketsphinx/models/es.dict
+
 
 #### 4.1.- Fichero de diccionario de usuario:
 
@@ -87,6 +91,7 @@ En este fichero debemos de introducir las palabras que queremos que se traduzcan
 
 Cabe destacar que para que la palabra sea reconocida, debe de estar también incluida en el diccionario del modelo (contiene 20.000 palabras en castellano).
 
+
 #### 4.2.- Fichero de parámetros del sistema:
 
 El sistema tiene varios parámetros modificables y son los siguientes:
@@ -100,6 +105,7 @@ El sistema tiene varios parámetros modificables y son los siguientes:
 		*	Si el valor es 1: El manejador de señales utilizará la función __FSMSignal() forzosamente. Además, se mostrarán las palabras que se reconozcan mediante la línea de comandos.  
 					  El valor 1 corresponde por defecto a la DEMO.  
 		*	Si el valor es 0: El manejador de señales escogería la función __FSMSignal() si el dispostivo NO es un Raspbian y usará la función __FSMSignalRPI() si SÍ nos econtramos en un Raspbian. Además, se desactivará el eco de las palabras reconocidas en la línea de comandos.
+
 
 #### 4.3.- Fichero de manejador de señales:
 
@@ -125,5 +131,45 @@ Estas funciones contienen dos variables importantes, AMBAS DEBEN DE SER DEVUELTA
 
 __NOTA IMPORTANTE: Para determinar si estamos en Raspbian, se importa la librería RPiGPIO de Python, que viene por defecto instalada en Raspbian. Si esta se instala en otro sistema operativo, será evaluado como Raspbian.__
 
+
 #### 4.4.- Fichero de corrección de errores:
 
+Dado que el rendimiento del modelo es de aproximadamente un 55% en las especificaciones ambientales adecuadas (un valor un poco bajo) debido a la colisión entre palabras, cabe la posibilidad de corregir las palabras NO utilizadas y que se estén confundiendo con las que queremos pronunciar en las palabras que queremos pronunciar. Por tanto, se añade un fichero que contiene un HashMap que corrige estos errores. Si por ejemplo al pronunciar la palabra 'nueve' el sistema la detecta como 'muere' podemos añadir la siguiente línea al HashMap: 'muere' : 'nueve', y por ende, 'muere' pasa a ser sinónimo de 'nueve'. Esta característica mejora el rendimiento del sistema a aproximadamente un 75%, por lo que por muy coloquial que pueda parecer, es necesaria en la mayoría de los casos que querramos un sistema de buen rendimiento. Además, podemos realizar labor de sinónimos con este HashMap.  
+Añadir una palabra al HashMap con el siguiente formato:
+
+	-	'PALABRA ERRÓNEA' : 'PALABRA CORRECTA',
+
+(Referirse al ejemplo proporcionado en la DEMO para más información).
+
+
+#### 4.5.- Fichero de diccionario del modelo:
+
+Este fichero contiene 20.000 palabras en castellano, por lo que si la palabra que quieres añadir a tu repertorio de comandos no se encuentra aquí, no será reconocida. Dado que este diccionario utiliza un modelo oculto de markov con los parámetros ya adaptados, podemos eliminar palabras del diccionario QUE NO UTILIZEMOS para mejorar LIGERAMENTE (hasta un 5%) el rendimiento del sistema, dado que evitaremos ciertas colisiones entre palabras. Dado que el modelo ya tiene los parámetros entrenados NO podremos añadir palabras.  
+Recomiendo no modificar este diccionario y utilizar en su lugar el fichero de CMap.py para evitar colisiones.
+
+
+### 5.- Especificaciones ambientales:
+
+El sistema está diseñado para soportar las siguientes condiciones ambientales:
+
+	-	Rango de distancia del locutor del micrófono entre 0 y 6 metros.
+	-	Ruido blanco gaussiano como máximo a 6dB por debajo del umbral de voz del locutor.
+	-	Se recomienda eliminar todo ruido lingístico. (palabras aleatorias que el sistema pueda detectar).
+	-	La distancia del locutor del micrófono no disminuye drásticamente el rendimiento. (66% a 6 metros vs 72% a 1 metro)
+	-	El ruido ambiental disminuye drásticamente el rendimiento. (-6dB rendimiento de 50% vs 75% a -30dB)
+
+### 6.- Cambio de nombre al comando:
+
+Para cambiar el nombre al comando basta con sustituir en la siguiente línea del fichero:
+
+	-	~/.bashrc
+
+La palabra Lola por la que deseemos que se llame nuestro comando en la línea:
+
+	-	alias Lola = 'python ~/sphinx/SpeechRecog/SCRIPTS/sampler.py'
+
+Posteriormente actualizar el fichero con el siguiente comando:
+
+	-	$	source ~/.bashrc
+
+Hecho esto, podremos ejecutar el programa desde cualquier directorio.
