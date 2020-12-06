@@ -49,3 +49,4 @@ def __FSMSignal( signal , state , number):
             print(" === > Apagando cocina.")
 
     return [0, number]
+
