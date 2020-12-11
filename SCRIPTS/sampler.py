@@ -53,6 +53,7 @@ try:
     dict_path = ((param.readline()).split())[4]
     core_mode = int(((param.readline()).split())[4])
     force_command = int(((param.readline()).split())[5])
+    force_eco = int(((param.readline()).split())[2])
     param.close()
 except:
     print("Error al acceder al archivo PARAMETERS.txt")
@@ -201,7 +202,7 @@ if __name__ == '__main__':
     state = 0
     number = ''
     for phrase in speech:
-    	if force_command == 1:
+    	if force_eco == 1:
         	print(phrase)
         words = str(phrase).split()
         for word in words:
