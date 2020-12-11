@@ -148,7 +148,7 @@ Añadir una palabra al HashMap con el siguiente formato:
 
 #### 4.5.- Fichero de diccionario del modelo:
 
-Este fichero contiene 20.000 palabras en castellano, por lo que si la palabra que quieres añadir a tu repertorio de comandos no se encuentra aquí, no será reconocida. Dado que este diccionario utiliza un modelo oculto de markov con los parámetros ya adaptados, podemos eliminar palabras del diccionario QUE NO UTILIZEMOS para mejorar LIGERAMENTE (hasta un 5%) el rendimiento del sistema, dado que evitaremos ciertas colisiones entre palabras. Dado que el modelo ya tiene los parámetros entrenados NO podremos añadir palabras.  
+Este fichero contiene 20.000 palabras en castellano, por lo que si la palabra que quieres añadir a tu repertorio de comandos no se encuentra aquí, no será reconocida. Dado que este diccionario utiliza un Modelo Oculto de Markov con los parámetros ya adaptados, podemos eliminar palabras del diccionario QUE NO UTILIZEMOS para mejorar LIGERAMENTE (hasta un 5%) el rendimiento del sistema, dado que evitaremos ciertas colisiones entre palabras. Dado que el modelo ya tiene los parámetros entrenados NO podremos añadir palabras.  
 Recomiendo no modificar este diccionario y utilizar en su lugar el fichero de CMap.py para evitar colisiones.
 
 
